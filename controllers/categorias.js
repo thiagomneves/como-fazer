@@ -15,6 +15,7 @@ const list = async(req, res) => {
 }
 const excluir = async(req, res) => {
     await api.apagar('categorias', req.params.id)
+    await api.apagar('publicacoes', req.params.id)
     res.redirect('/categorias')
 }
 const editarForm = async (req, res) => {
@@ -29,8 +30,6 @@ const editar = async (req, res) => {
     }) 
     res.redirect('/categorias')
 }
-
-
 
 module.exports = {
     novaForm, nova,
